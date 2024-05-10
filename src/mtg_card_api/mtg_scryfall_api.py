@@ -114,5 +114,24 @@ class ScryfallAPI():
             Utils.encodeMD5(card_name),
             'cache/cards')
 
+    def get_card_variants(self, oracle_id: str) -> R:
+        """Searches Scryfall by the oracle to find all variants of a card
+
+        Args:
+            card_name (str): Exact string oracle id of a card
+
+        Returns:
+            R: Full search result
+        """
+        return self._run_get(
+            'https://api.scryfall.com/cards/search',
+            {
+                'q': f'oracle_id={oracle_id}',
+                'unique': 'prints'
+            },
+            oracle_id,
+            'cache/variants'
+        )
+
     def run(self):
         pass
