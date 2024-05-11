@@ -77,9 +77,8 @@ class ScryfallAPI():
         config['rest'] = rest_obj
         self._debug(f"{config}")
         response = rc.execute(rest_obj)
-        if self.use_cache:
+        if response.error is not False and self.use_cache:
             self._set_cache(o, response)
-
         return response
 
     def clear_cache(self) -> None:
@@ -132,6 +131,3 @@ class ScryfallAPI():
             oracle_id,
             'cache/variants'
         )
-
-    def run(self):
-        pass
