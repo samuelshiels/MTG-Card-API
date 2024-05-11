@@ -123,7 +123,7 @@ class ScryfallAPI():
             R: Full search result
         """
         return self._run_get(
-            'https://api.scryfall.com/cards/search',
+            'cards/search',
             {
                 'q': f'oracle_id={oracle_id}',
                 'unique': 'prints'
