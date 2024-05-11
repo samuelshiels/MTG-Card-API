@@ -77,7 +77,7 @@ class ScryfallAPI():
         config['rest'] = rest_obj
         self._debug(f"{config}")
         response = rc.execute(rest_obj)
-        if response.error is not False and self.use_cache:
+        if response.error is False and self.use_cache:
             self._set_cache(o, response)
         return response
 
