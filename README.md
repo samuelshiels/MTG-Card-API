@@ -18,7 +18,6 @@ Default values for module will cache the result for 24hrs in `$XDG_HOME/.cache/M
 
 # Requirements 
   - rest_client_micro
-  - diskcache
 
 # Installation
 
